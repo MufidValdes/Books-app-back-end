@@ -18,7 +18,7 @@ const addBookHandler = (request, h) => {
   const insertedAt = new Date().toISOString();
   const updatedAt = insertedAt;
 
-  // validasi apabila client tidak melampirkan properti name pada request body
+  // validasi jika client tidak melampirkan properti name pada request body
   if (name === undefined) {
     const response = h.response({
       status: 'fail',
@@ -28,7 +28,7 @@ const addBookHandler = (request, h) => {
     return response;
   }
 
-  // validasi apabila client melampirkan nilai readPage yang lebih besar dari pageCount
+  // validasi jika client melampirkan nilai readPage yang lebih besar dari pageCount
   if (readPage > pageCount) {
     const response = h.response({
       status: 'fail',
@@ -172,7 +172,7 @@ const editBookByIdHandler = (request, h) => {
   } = request.payload;
 
   const updatedAt = new Date().toISOString();
-  // validasi apabila client tidak melampirkan properti name pada request body
+  // validasi jika client tidak melampirkan properti name pada request body
   if (name === undefined) {
     const response = h.response({
       status: 'fail',
@@ -182,7 +182,7 @@ const editBookByIdHandler = (request, h) => {
     return response;
   }
 
-  // validasi apabila client melampirkan nilai readPage yang lebih besar dari pageCount
+  // validasi jika client melampirkan nilai readPage yang lebih besar dari pageCount
   if (readPage > pageCount) {
     const response = h.response({
       status: 'fail',
